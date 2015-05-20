@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color_backgrount"
+    tools:context="com.uniminuto.calculadora.calculadora.fragment.fragmentCalculator">
+
+
+    <TextView
+        android:textSize="25dp"
+        android:id="@+id/labelbienve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/string_calcula"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/text_color_blue" />
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/login_ActivityLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_below="@+id/labelbienve"
+        android:layout_centerHorizontal="true">
+
+
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/labelnota1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/string_Primera"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/text_color_black" />
+
+            <com.beardedhen.androidbootstrap.BootstrapEditText
+                bootstrap:bb_roundedCorners="true"
+                android:id="@+id/txtNota1"
+                android:textAlignment="center"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/string_porcentaje35"
+                android:inputType="numberDecimal" />
+
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/labelnota2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/string_Segunda"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_color_black" />
+
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            bootstrap:bb_roundedCorners="true"
+            android:id="@+id/txtNota2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:hint="@string/string_porcentaje35"
+            android:inputType="numberDecimal" />
+
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/labelnota3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/string_Tercera"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_color_black" />
+
+        <com.beardedhen.androidbootstrap.BootstrapEditText
+            bootstrap:bb_roundedCorners="true"
+            android:id="@+id/txtNota3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:hint="@string/string_porcentaje30"
+            android:inputType="numberDecimal" />
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <include layout="@layout/simple_button"></include>
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/btnCalcular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_Calcular"
+                bootstrap:bb_roundedCorners="true"
+
+                bootstrap:bb_type="success" />
+
+
+            <include layout="@layout/simple_button"></include>
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:id="@+id/btnlimpiar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_Limpiar"
+                bootstrap:bb_roundedCorners="true"
+                bootstrap:bb_type="primary" />
+
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/labelresulta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/text_color_blue"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+</RelativeLayout>
