@@ -45,8 +45,6 @@ public class fragmentOther extends Fragment {
 
         ButterKnife.inject(this, view);
 
-        InputMethodManager inputMethodManager = (InputMethodManager)  getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
 
         return view;
     }

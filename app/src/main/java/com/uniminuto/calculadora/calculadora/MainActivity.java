@@ -1,5 +1,6 @@
 package com.uniminuto.calculadora.calculadora;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import com.uniminuto.calculadora.calculadora.fragment.fragmentCalculator;
 import com.uniminuto.calculadora.calculadora.fragment.fragmentMessage;
@@ -25,7 +27,7 @@ public class MainActivity extends MaterialNavigationDrawer  {
     public void init(Bundle savedInstanceState) {
 
 
-        this.setDrawerBackground(this.getResources().getDrawable(R.mipmap.logo2));
+        this.setDrawerBackground(this.getResources().getDrawable(R.mipmap.logo22));
 
         this.addSection(this.newSection("Calcular notas", this.getResources().getDrawable(R.mipmap.calculator24),
                 new fragmentCalculator()).setSectionColor(Color.parseColor("#2196f3")));
@@ -39,16 +41,6 @@ public class MainActivity extends MaterialNavigationDrawer  {
 
             mensaje = new fragmentMessage();
             mensaje.show(getSupportFragmentManager(), "key");
-
-
-//        DrawerLayout mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-//
-//        if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-//            imm.hideSoftInputFromWindow(mDrawerLayout.getWindowToken(), 0);
-//        }
-
-
 
     }
 
@@ -73,6 +65,11 @@ public class MainActivity extends MaterialNavigationDrawer  {
         if (id == R.id.closeSesion) {
             finish();
             return true;
+        }
+
+        if(this.getCurrentFocus() != null && this.getCurrentFocus() instanceof EditText){
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
 
         return super.onOptionsItemSelected(item);

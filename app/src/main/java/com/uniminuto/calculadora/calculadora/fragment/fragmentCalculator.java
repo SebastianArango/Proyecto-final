@@ -1,6 +1,7 @@
 package com.uniminuto.calculadora.calculadora.fragment;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -110,12 +112,12 @@ public class fragmentCalculator extends Fragment {
                                 "Tu asignatura ahora tiene un promedio de: " + df.format(notasum));
                     }else if (notafinal>5 ){
                         labelresulta.setTextColor(getResources().getColor(R.color.color_red));
-                        labelresulta.setText("No hay nada que hacer  \n Tu asignatura fue reprobada \n Te faltaria:  " + df.format(notafinal));
+                        labelresulta.setText("No hay nada que hacer  \nTu asignatura fue reprobada \nTe faltaria:  " + df.format(notafinal));
                     }
 
                     else {
                         labelresulta.setTextColor(getResources().getColor(R.color.color_red));
-                        labelresulta.setText("Para aplicar a una nota de 3.0 \n Te falta:  " + df.format(notafinal));
+                        labelresulta.setText("Para aplicar a una nota de 3.0 \nTe falta:  " + df.format(notafinal));
 
                     }
 
@@ -153,10 +155,16 @@ public class fragmentCalculator extends Fragment {
                 not1.setError("Campo requerido");
             }
 
+        InputMethodManager inputMethodManager = (InputMethodManager)  getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+
         }
 
         @OnClick(R.id.btnlimpiar)
         public void limpiarEditText (View view){
+            InputMethodManager inputMethodManager = (InputMethodManager)  getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+
             not1.setText("");
             not2.setText("");
             not3.setText("");
